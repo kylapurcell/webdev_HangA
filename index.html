@@ -25,7 +25,6 @@
             {"BANKRUPTCY" : "the state of being unable to pay outstanding debts"},
         ]
 
-
         function pick_word(){
             let word_array = word_list[Math.floor(Math.random() * word_list.length)];
             let word_string = (Object.keys(word_array));
@@ -36,8 +35,6 @@
             return word;
         }
 
-
-
         function split_word(){
             let word = pick_word();
             let mod_word = word.split("");
@@ -45,7 +42,7 @@
             return mod_word;
         };
 
-         let word = split_word()
+        let word = split_word();
 
         function word_score(value){
             count = 0
