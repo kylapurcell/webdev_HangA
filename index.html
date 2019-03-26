@@ -25,7 +25,8 @@
             btn.style.width= '30' + 'px';
             btn.onclick = function () {
                 btn.style.visibility='hidden'
-                console.log("Button " + " " + btn.value + " " + " was clicked" )
+                console.log("Button " + " " + btn.value + " " + " was clicked" );
+                return btn.value;
                 }
             } }
     
@@ -34,7 +35,7 @@
 
         
         
-        let word_list = ["TATOO", "ELECTRICITY", "COMMITTE", "JAVASCRIPT", "PYTHON", "SUSHI", "BREAKFAST", "MISSISSIPPI", "COFFEE", "BANKRUPTCY"];
+        let word_list = ["TATTOO", "ELECTRICITY", "COMMITTEE", "JAVASCRIPT", "PYTHON", "SUSHI", "BREAKFAST", "MISSISSIPPI", "COFFEE", "BANKRUPTCY"];
 
 
         let definition = {
@@ -55,11 +56,21 @@
             let word = word_list[Math.floor(Math.random() * word_list.length)];
             console.log(word);
             console.log(definition[word]);
+            return word;
         }
 
-        
+        function split_word(){
+            let word = pick_word();
+            let mod_word = word.split("");
+            console.log(mod_word);
+            return mod_word;
+        };
 
-        pick_word();
+
+
+
+
+        split_word();
 
     </script>
 
