@@ -7,33 +7,11 @@
 </head>
 <body>
 
+    <p id = 'score'>Your Score is 0 </p>
+
     <script>
+        let score = 0
 
-
-        function letter (n) {
-            return String.fromCharCode(n+65)
-        }
-
-
-        function Create_Buttons (x) {
-            for (i = 0; i < x; i++){
-            let btn = document.createElement("BUTTON");
-            document.body.appendChild(btn);
-            btn.innerHTML=letter(i);
-            btn.setAttribute('value',letter(i))
-            btn.style.marginRight= '10' + 'px';
-            btn.style.width= '30' + 'px';
-            btn.onclick = function () {
-                btn.style.visibility='hidden'
-                console.log("Button " + " " + btn.value + " " + " was clicked" );
-                return btn.value;
-                }
-            } }
-    
-        Create_Buttons(26)
-
-
-        
         let word_list = [
             {"TATTOO": "a form of body modification where a design is made using ink and a needle gun"},
             {"ELECTRICITY": "is the set of physical phenomena associated with the presence and motioin of electric charge"},
@@ -67,7 +45,50 @@
             return mod_word;
         };
 
-        split_word();
+         let word = split_word()
+
+        function word_score(value){
+            count = 0
+            let increase = false
+            for (i=0;i<word.length;i++){
+                if (value == word[i]) {
+                    count ++
+                    score ++
+                }
+            }
+            if (count < 1) {
+                score = score -1
+            }
+            console.log(word)
+            console.log(score)
+        }
+
+        
+        function letter (n) {
+            return String.fromCharCode(n+65)
+        }
+
+
+        function Create_Buttons (x) {
+            for (i = 0; i < x; i++){
+            let btn = document.createElement("BUTTON");
+            document.body.appendChild(btn);
+            btn.innerHTML=letter(i);
+            btn.setAttribute('value',letter(i))
+            btn.style.marginRight= '10' + 'px';
+            btn.style.width= '30' + 'px';
+            btn.onclick = function () {
+                btn.style.visibility='hidden'
+                console.log("Button " + " " + btn.value + " " + " was clicked" );
+                let score = word_score(btn.value)
+                document.getElementById('score').innerHTML= score;
+                }
+            } }
+    
+        Create_Buttons(26)
+
+
+
 
     </script>
 
