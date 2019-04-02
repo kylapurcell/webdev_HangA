@@ -8,12 +8,14 @@
 <body>
 
     <p id = 'score'>Your Score is 0 </p>
+    <p id = 'lives'> 7 </p>
     <div>
     <p id = "lines">-</p>
     </div>
     <h2 id="definition"></h2>
     <script>
         let score = 0
+        let lives = 7
 
         let word_list = [
             {"TATTOO": "a form of body modification where a design is made using ink and a needle gun"},
@@ -50,18 +52,27 @@
 
         function word_score(value){
             count = 0
-            let increase = false
+            let decrease = true
             for (i=0;i<word.length;i++){
                 if (value == word[i]) {
                     count ++
                     score ++
+                    decrease = false
                 }
             }
             if (count < 1) {
                 score = score -1
+              
             }
-            console.log(word)
-            console.log(score)
+            return decrease
+        }
+
+        function live_score(value){
+            if (word_score(value)) {
+                lives = lives - 1
+                console.log(lives)
+                
+            }
         }
 
         
@@ -81,9 +92,10 @@
             btn.onclick = function () {
                 btn.style.visibility='hidden'
                 console.log("Button " + " " + btn.value + " " + " was clicked" );
-                word_score(btn.value);
+                live_score(btn.value);
                 dashes(btn.value, num_lines);
                 document.getElementById('score').innerHTML= "Your Score is" + " " + score;
+                document.getElementById('lives').innerHTML = lives;
                 }
             } }
 
