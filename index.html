@@ -83,16 +83,21 @@
             } }
     
     Create_Buttons(26)
-
+    
     num_lines = []
-        function dashes(){
+        function dashes(value){
             for (let i=0;i<word.length;i++){
                 num_lines.push("_")
+                if (value == word[i]){
+                   num_lines[i] = word[i]
+                   document.write(num_lines)
+                } 
             }
             document.write(num_lines.join(" "));
         }   
         
-    dashes();
+        dashes();
+    
 
 
 
