@@ -8,7 +8,9 @@
 <body>
 
     <p id = 'score'>Your Score is 0 </p>
-
+    <div>
+    <p id = "lines">-</p>
+    </div>
     <script>
         let score = 0
 
@@ -82,6 +84,7 @@
                 document.getElementById('score').innerHTML=score;
                 }
             } }
+
     
     Create_Buttons(26)
     
@@ -94,7 +97,11 @@
                 else{
                     num_lines[i] = "_";
                 }
-            }document.write(num_lines.join(" "));
+            }
+            let lineWrite = num_lines.join(" ");
+            console.log(lineWrite);
+            // document.write(lineWrite);
+            document.getElementById("lines").innerHTML = (lineWrite);
         }        
         dashes();
        
