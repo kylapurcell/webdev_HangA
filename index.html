@@ -78,26 +78,26 @@
                 btn.style.visibility='hidden'
                 console.log("Button " + " " + btn.value + " " + " was clicked" );
                 word_score(btn.value);
+                dashes(btn.value);
                 document.getElementById('score').innerHTML=score;
                 }
             } }
     
     Create_Buttons(26)
     
-    num_lines = []
+    let num_lines = []
         function dashes(value){
-            for (let i=0;i<word.length;i++){
-                num_lines.push("_")
+            for (i=0;i < word.length; i++){
                 if (value == word[i]){
-                   num_lines[i] = word[i]
-                   document.write(num_lines)
-                } 
-            }
-            document.write(num_lines.join(" "));
-        }   
-        
+                    num_lines[i] = word[i];
+                }
+                else{
+                    num_lines[i] = "_";
+                }
+            }document.write(num_lines.join(" "));
+        }        
         dashes();
-    
+       
 
 
 
