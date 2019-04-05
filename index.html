@@ -87,8 +87,10 @@
             document.body.appendChild(btn);
             btn.innerHTML=letter(i);
             btn.setAttribute('value',letter(i))
-            btn.style.marginRight= '10' + 'px';
-            btn.style.width= '30' + 'px';
+            btn.style.margin= '10' + 'px';
+
+            btn.style.width= '50' + 'px';
+            btn.style.height= "50" + "px";
             btn.onclick = function () {
                 btn.style.visibility='hidden'
                 console.log("Button " + " " + btn.value + " " + " was clicked" );
