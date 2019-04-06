@@ -18,6 +18,10 @@
 
 
     <script>
+        // setting the inital values
+        let lives = 7;
+        let score = 0;
+
 
         // the dictionary of words that will be used in the game
         let word_list = [
@@ -34,34 +38,6 @@
             ]
 
 
-
-        // creates the buttons and performs game mechanics per button click
-        function Create_Buttons (x, num_lines, word) {
-            for (i = 0; i < x; i++){
-            let btn = document.createElement("BUTTON");
-            let element = document.getElementById("buttons_here")
-            element.appendChild(btn);
-            btn.innerHTML=letter(i);
-            btn.setAttribute('value',letter(i))
-            btn.style.margin= '10' + 'px';
-            btn.style.width= '50' + 'px';
-            btn.style.height= "50" + "px";
-            btn.onclick = function () {
-                btn.style.visibility='hidden'
-                console.log("Button " + " " + btn.value + " " + " was clicked!" );
-                dashes(btn.value, num_lines, word);
-                live_score(btn.value);
-                document.getElementById('score').innerHTML= "Your Score is" + " " + score;
-                document.getElementById('lives').innerHTML = lives;
-            } }
-        }
-        // creates the letters in the order i
-        function letter (n) {
-            return String.fromCharCode(n+65)
-        }
-
-
-
         // randomly selects a word from the word object
         function pick_word(){
             let word_array = word_list[Math.floor(Math.random() * word_list.length)];
@@ -70,7 +46,7 @@
             let definition = word_array[word];
             console.log(word);
             console.log(definition);
-            document.getElementById('definition').innerHTML = definition;
+            document.getElementById("definition").innerHTML = definition;
             return word;
         }
         // picks a random word and splits the characters of the word into a list 
@@ -81,11 +57,12 @@
             console.log(mod_word);
             return mod_word;
         }
+        let word = split_word();
 
 
         // displays and modifies the lines as play goes on 
-        function initiate_dashes(word){
-            num_lines = []
+        let num_lines = []
+        function initiate_dashes(){
             for (i = 0; i < word.length; i++){
                     num_lines[i] = "_";
             }
@@ -94,12 +71,10 @@
             document.getElementById("lines").innerHTML = (lineWrite);
             return num_lines;
         }
-        function dashes(value, num_lines, word){
-            correct_letters = 0;
+        function dashes(value){
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
-                    correct_letters += 1;
                 }
             }
             let lineWrite = num_lines.join(" ");
@@ -107,6 +82,7 @@
             document.getElementById("lines").innerHTML = (lineWrite);
             return num_lines;
         }
+        initiate_dashes();
 
 
         function word_score(value){
@@ -114,8 +90,8 @@
             let decrease = true
             for (i=0;i<word.length;i++){
                 if (value == word[i]) {
-                    count ++
-                    score ++
+                    count ++;
+                    score ++;
                     decrease = false
                 }
             }
@@ -154,25 +130,48 @@
             return lives;
         }
 
+         // creates the buttons and performs game mechanics per button click
+        function Create_Buttons (x) {
+            for (i = 0; i < x; i++){
+            let btn = document.createElement("BUTTON");
+            let element = document.getElementById("buttons_here")
+            element.appendChild(btn);
+            btn.innerHTML=letter(i);
+            btn.setAttribute('value',letter(i))
+            btn.style.margin= '10' + 'px';
+            btn.style.width= '50' + 'px';
+            btn.style.height= "50" + "px";
+            btn.onclick = function () {
+                btn.style.visibility='hidden'
+                console.log("Button " + " " + btn.value + " " + " was clicked!" );
+                dashes(btn.value);
+                live_score(btn.value);
+                document.getElementById('score').innerHTML= "Your Score is" + " " + score;
+                document.getElementById('lives').innerHTML = lives;
+            } }
+        }
+        // creates the letters in the order i
+        function letter (n) {
+            return String.fromCharCode(n+65)
+        }
+        Create_Buttons(26);
 
-    let word = split_word();
-    let lives = 7;
-    let score = 0;
 
 
         function start_game(){
-            let word = split_word();
-        let lives = 7;
-        let score = 0;
-            num_lines = initiate_dashes(word);
+            word = split_word();
+            lives = 7;
+            score = 0;
+            document.getElementById('score').innerHTML= "Your Score is" + " " + score;
+            document.getElementById('lives').innerHTML = lives;
+            num_lines = [];
+            initiate_dashes();
             document.getElementById("buttons_here").innerHTML=" ";
-            Create_Buttons(26, num_lines, word);
+            Create_Buttons(26);
         }
         
-
-        start_game();
-
+       
+    
         document.getElementById("endgame").onclick = start_game;
-
         </script>
 </html>
