@@ -38,10 +38,13 @@
                         </li>
                         <li id="row_three">
                         </li>
+                        <li id="row_four">
+                        </li>
                 </ul>
             </div>
     </main>
 </div>
+<img src = "Images/image1.gif" id = 'hangimage'>
 </body>
 
 
@@ -149,21 +152,36 @@
             }
             return lives;
         }
+
+        function lives_image(){
+            if (lives == 6) {
+                document.getElementById('hangimage').src='images/image2.gif'
+            }
+            if (lives == 5) {
+                document.getElementById('hangimage').src='images/image3.gif'
+            }
+            if (lives == 4){
+                document.getElementById('hangimage').src='images/image4.gif'
+            }
+            if (lives == 3){
+                document.getElementById('hangimage').src='images/image5.gif'
+            }
+            if (lives == 2) {
+                document.getElementById('hangimage').src='images/image6.gif'
+            }
+            if (lives == 1) {
+                document.getElementById('hangimage').src='images/image7.gif'
+            }
+            if (lives == 0){
+                document.getElementById('hangimage').src='images/image8.gif'
+            }
+        }
+
+
          // creates the buttons and performs game mechanics per button click
         function Create_Buttons (x) {
             for (i = 0; i < x; i++){
             let btn = document.createElement("BUTTON");
-            /**
-            let element = document.getElementById("buttons_here")
-            */
-            /**
-            element.appendChild(btn);
-            btn.innerHTML=letter(i);
-            btn.setAttribute('value',letter(i))
-            btn.style.margin= '10' + 'px';
-            btn.style.width= '50' + 'px';
-            btn.style.height= "50" + "px";
-            */
             if(i < 9)
             {
                 document.querySelector("#keyboard #row_one").appendChild(btn);
@@ -186,12 +204,13 @@
                 }
             }
             btn.onclick = function () {
-                btn.style.visibility='hidden'
+                btn.style.visibility='hidden';
                 console.log("Button " + " " + btn.value + " " + " was clicked!" );
                 dashes(btn.value);
                 live_score(btn.value);
                 document.getElementById('score').innerHTML= "Your Score is" + " " + score;
                 document.getElementById('lives').innerHTML = "Remaining Lives:" + " " + lives;
+                lives_image()
             } }
         }
         // creates the letters in the order i
@@ -205,14 +224,14 @@
             score = 0;
             document.getElementById('score').innerHTML= "Your Score is" + " " + score;
             document.getElementById('lives').innerHTML = "Remaining Lives:" + " " + lives;
+            document.getElementById('hangimage').src='images/image1.gif'
             num_lines = [];
             initiate_dashes();
-            document.getElementById("buttons_here").innerHTML=" ";
+            document.getElementById("row_one").innerHTML=" ";
+            document.getElementById("row_two").innerHTML=" ";
+            document.getElementById("row_three").innerHTML=" ";
             Create_Buttons(26);
         }
-        
-       
-    
         document.getElementById("endgame").onclick = start_game;
         </script>
 </html>
