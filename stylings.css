@@ -1,3 +1,9 @@
+/**
+  Filename: stylings.css
+  Author: Wade Schmidt
+  Date: Apr.8,2018.
+  Notes: Stylesheet for Web Dev group project.
+*/
 @font-face
       {
           font-family: Type_Keys;
@@ -67,9 +73,6 @@
         font-style:Type_Keys;
         font-size: 1.00em;
         color: red;
-        /**
-        background-color: lightgray;
-        */
         background: linear-gradient(to bottom, lightgrey,seashell);
         border-style: groove;
         border-color:black;
@@ -170,7 +173,8 @@
         text-align: center;
       }
 
-      button:hover {
+      button:hover 
+      {
         background: #434343;
         letter-spacing: 1px;
         -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
