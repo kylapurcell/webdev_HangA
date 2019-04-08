@@ -38,6 +38,8 @@
                         </li>
                         <li id="row_three">
                         </li>
+                        <li id="row_four">
+                        </li>
                 </ul>
             </div>
     </main>
@@ -153,17 +155,6 @@
         function Create_Buttons (x) {
             for (i = 0; i < x; i++){
             let btn = document.createElement("BUTTON");
-            /**
-            let element = document.getElementById("buttons_here")
-            */
-            /**
-            element.appendChild(btn);
-            btn.innerHTML=letter(i);
-            btn.setAttribute('value',letter(i))
-            btn.style.margin= '10' + 'px';
-            btn.style.width= '50' + 'px';
-            btn.style.height= "50" + "px";
-            */
             if(i < 9)
             {
                 document.querySelector("#keyboard #row_one").appendChild(btn);
@@ -186,7 +177,7 @@
                 }
             }
             btn.onclick = function () {
-                btn.style.visibility='hidden'
+                btn.style.visibility='hidden';
                 console.log("Button " + " " + btn.value + " " + " was clicked!" );
                 dashes(btn.value);
                 live_score(btn.value);
@@ -207,12 +198,11 @@
             document.getElementById('lives').innerHTML = "Remaining Lives:" + " " + lives;
             num_lines = [];
             initiate_dashes();
-            document.getElementById("buttons_here").innerHTML=" ";
+            document.getElementById("row_one").innerHTML=" ";
+            document.getElementById("row_two").innerHTML=" ";
+            document.getElementById("row_three").innerHTML=" ";
             Create_Buttons(26);
         }
-        
-       
-    
         document.getElementById("endgame").onclick = start_game;
         </script>
 </html>
