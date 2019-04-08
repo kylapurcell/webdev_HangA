@@ -16,8 +16,8 @@
           font-size:3.50em;
           background-color: grey;
           background-image: url("Images/Danger_2.png");
-          background-size: 149px;
-          height:150px;
+          background-size: 115px;
+          height:115px;
           border-style: groove;
           border-color: grey;
           border-radius: 5px;
@@ -35,7 +35,9 @@
         background:black;
         background-image: linear-gradient(to bottom, grey, black);
         padding: 10px;
+        /**
         display: inline-block;
+        */
         border:none;
         margin-right:5px;
         margin-top:5px;
@@ -44,7 +46,32 @@
         font-size:1.25em;
         border-radius: 5px;
       }
+
+      #lives
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background-color: lightgray;
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+      }
       
+      #definition
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background-color: lightgray;
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+      }
       #score
       {
         -webkit-text-stroke-width: 1px;
@@ -62,6 +89,11 @@
       .score
       {
           display:inline-block;
+      }
+
+      .end_game
+      {
+        display:inline-block;
       }
 
       #lines
@@ -89,6 +121,7 @@
         margin-bottom: auto;
         margin-top: 15px;
         text-align:center;
+        position:relative;
         
       }
       
