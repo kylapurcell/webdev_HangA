@@ -35,9 +35,6 @@
         background:black;
         background-image: linear-gradient(to bottom, grey, black);
         padding: 10px;
-        /**
-        display: inline-block;
-        */
         border:none;
         margin-right:5px;
         margin-top:5px;
@@ -47,17 +44,39 @@
         border-radius: 5px;
       }
 
+      #endgame
+      {
+        font-style:Type_Keys;
+        color: #fff !important;
+        text-transform: uppercase;
+        text-shadow: 3px;
+        font-weight: 300;
+        background:black;
+        text-align: center;
+        background-image: linear-gradient(to bottom, grey, black);
+        display: inline-block;
+        border:none;
+        width: 125px;
+        font-size:1.25em;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
       #lives
       {
         font-style:Type_Keys;
         font-size: 1.00em;
         color: red;
+        /**
         background-color: lightgray;
+        */
+        background: linear-gradient(to bottom, lightgrey,seashell);
         border-style: groove;
         border-color:black;
         border-radius:5px;
         display: inline-block;
         padding: 5px;
+        margin-bottom: 10px;
       }
       
       #definition
@@ -65,12 +84,14 @@
         font-style:Type_Keys;
         font-size: 1.00em;
         color: red;
-        background-color: lightgray;
+        background: linear-gradient(to bottom, lightgray, seashell);
         border-style: groove;
         border-color:black;
         border-radius:5px;
         display: inline-block;
         padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 10px;
       }
       #score
       {
@@ -101,12 +122,14 @@
           font-style:Type_Keys;
           font-size: 2.00em;
           color: red;
-          background-color: lightgray;
+          background: linear-gradient(to bottom, lightgray, seashell);
           border-style: groove;
           border-color:black;
           border-radius:5px;
-          padding-left: 25px;
-          padding-right: 25px;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-top: 5px;
+          margin-bottom:10px;
       }
 
       .lines
