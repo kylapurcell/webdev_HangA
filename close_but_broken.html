@@ -63,6 +63,7 @@
 
         // displays and modifies the lines as play goes on 
         let num_lines = []
+
         function initiate_dashes(){
             for (i = 0; i < word.length; i++){
                     num_lines[i] = "_";
@@ -73,9 +74,21 @@
             return num_lines;
         }
         function dashes(value){
+            let remaining_letters = word.length;
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
+                    remaining_letters -= 1;
+                }
+                if (remaining_letters == 0){
+                    let win = confirm("Congratulations! You've won!");
+                    if (win == true){
+                        start_game()
+                    }
+                    else{
+                        start_game()
+                    }
+             
                 }
             }
             let lineWrite = num_lines.join(" ");
@@ -211,6 +224,7 @@
     
         document.getElementById("endgame").onclick = start_game;
 
-        zero_lives()
+        
+        
         </script>
 </html>

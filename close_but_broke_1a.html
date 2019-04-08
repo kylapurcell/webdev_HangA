@@ -128,8 +128,17 @@
         function live_score(value){
             if (word_score(value)) {
                 lives = lives - 1;
-                console.log(lives);
-                
+                console.log(lives); 
+            }
+            //When user hits 0 lives, alert will pop-up, user can press ok or cancel to restart.
+            if (lives==0){
+                let okay = confirm("You have 0 lives. Game Over! Press OK to restart!")
+                if (okay == true) {
+                    start_game()
+                }
+                if (okay == false){
+                    start_game()
+                }
             }
         }
     
