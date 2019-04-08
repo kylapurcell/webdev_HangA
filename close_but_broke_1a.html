@@ -88,6 +88,7 @@
         let word = split_word();
         // displays and modifies the lines as play goes on 
         let num_lines = []
+        let remainingLetters = word.length;
         function initiate_dashes(){
             for (i = 0; i < word.length; i++){
                     num_lines[i] = "_";
@@ -101,8 +102,22 @@
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
+                    remainingLetters --;
                 }
-            }
+                }
+            if (remainingLetters == 0){
+                let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
+                let name = prompt("Enter your name: ");
+                localStorage.setItem(name, score)
+                if (winner == true){
+                    start_game();
+                }
+                else{
+                    start_game();
+                }
+            } 
+                console.log(localStorage);
+        
             let lineWrite = num_lines.join(" ");
             console.log(lineWrite);
             document.getElementById("lines").innerHTML = (lineWrite);
@@ -128,17 +143,8 @@
         function live_score(value){
             if (word_score(value)) {
                 lives = lives - 1;
-                console.log(lives); 
-            }
-            //When user hits 0 lives, alert will pop-up, user can press ok or cancel to restart.
-            if (lives==0){
-                let okay = confirm("You have 0 lives. Game Over! Press OK to restart!")
-                if (okay == true) {
-                    start_game()
-                }
-                if (okay == false){
-                    start_game()
-                }
+                console.log(lives);
+                
             }
         }
     

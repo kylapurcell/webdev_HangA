@@ -75,7 +75,6 @@
             return num_lines;
         }
         function dashes(value){
-            let remaining_letters = word.length;
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
@@ -85,15 +84,15 @@
             if (remainingLetters == 0){
                 let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
                 let name = prompt("Enter your name: ");
-                localStorage.setItem(name, score)
                 if (winner == true){
-                    location.reload();
+                    location.reload()
                 }
                 else{
                     location.reload()
                 }
             } 
-                console.log(localStorage);
+                console.log(name);
+                console.log(score);
         
             let lineWrite = num_lines.join(" ");
             console.log(lineWrite);
@@ -101,6 +100,7 @@
             return num_lines;
         }
         initiate_dashes();
+
 
         function word_score(value){
             count = 0
