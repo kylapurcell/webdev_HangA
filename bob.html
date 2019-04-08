@@ -94,9 +94,11 @@
                 if (value == word[i]){
                     remainingLetters --;
                 }
-                if (remainingLetters == 0){
+            }
+            if (remainingLetters == 0){
                     let name = prompt("Enter your name: ");
                     console.log(name);
+                    console.log(score);
                     let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
                     if (winner == true){
                         location.reload();
@@ -105,7 +107,6 @@
                         location.reload()
                     }
                 }
-            }
         }    
            
     

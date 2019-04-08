@@ -117,7 +117,7 @@
                         if (remainingLetters == 0){
                             let name = prompt("Enter your name: ");
                             console.log(name);
-                            let winner = confirm("Congratulations! The word is " + word.join(" ") + ". " + "Your score is" + " " + score + ".");
+                            let winner = confirm("Congratulations," + " " +  name + "!" + " " + "The word is " + word.join(" ") + ". " + "Your score is" + " " + score + ".");
                             if (winner == true){
                                 location.reload();
                             }
