@@ -85,6 +85,8 @@
         }
         initiate_dashes();
 
+       
+
 
         function word_score(value){
             count = 0
@@ -106,10 +108,18 @@
             if (word_score(value)) {
                 lives = lives - 1;
                 console.log(lives);
-                
+            }
+            //When user hits 0 lives, alert will pop-up, user can press ok or cancel to restart.
+            if (lives==0){
+                let okay = confirm("You have 0 lives. Game Over! Press OK to restart!")
+                if (okay == true) {
+                    start_game()
+                }
+                if (okay == false){
+                    start_game()
+                }
             }
         }
-    
 
         function right_letters(value, word){
             count = 0;
@@ -154,7 +164,6 @@
                 document.getElementById('hangimage').src='images/image8.gif'
             }
         }
-       
 
          // creates the buttons and performs game mechanics per button click
         function Create_Buttons (x) {
@@ -201,5 +210,7 @@
        
     
         document.getElementById("endgame").onclick = start_game;
+
+        zero_lives()
         </script>
 </html>
