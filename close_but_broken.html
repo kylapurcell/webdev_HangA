@@ -81,19 +81,18 @@
                     num_lines[i] = word[i];
                     remainingLetters --;
                 }
-                }
+            }
             if (remainingLetters == 0){
                 let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
                 let name = prompt("Enter your name: ");
-                localStorage.setItem(name, score)
                 if (winner == true){
-                    location.reload();
+                    console.log(name);
+                    console.log(score);
                 }
                 else{
                     location.reload()
                 }
             } 
-                console.log(localStorage);
         
             let lineWrite = num_lines.join(" ");
             console.log(lineWrite);

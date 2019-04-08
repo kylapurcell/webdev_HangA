@@ -88,7 +88,6 @@
         let word = split_word();
         // displays and modifies the lines as play goes on 
         let num_lines = []
-        let remainingLetters = word.length;
         function initiate_dashes(){
             for (i = 0; i < word.length; i++){
                     num_lines[i] = "_";
@@ -102,28 +101,39 @@
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
-                    remainingLetters --;
                 }
-                }
-            if (remainingLetters == 0){
-                let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
-                let name = prompt("Enter your name: ");
-                localStorage.setItem(name, score)
-                if (winner == true){
-                    start_game();
-                }
-                else{
-                    start_game();
-                }
-            } 
-                console.log(localStorage);
-        
+            }
             let lineWrite = num_lines.join(" ");
             console.log(lineWrite);
             document.getElementById("lines").innerHTML = (lineWrite);
             return num_lines;
         }
         initiate_dashes();
+
+        let remainingLetters = word.length;
+        function user_input(value){
+            for (i=0;i<word.length;i++){
+                if (value == word[i]){
+                    remainingLetters --;
+                }
+                if (remainingLetters == 0){
+                    let name = prompt("Enter your name: ");
+                    console.log(name);
+                    let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
+                    if (winner == true){
+                        location.reload();
+                    }
+                    else{
+                        location.reload()
+                    }
+                }
+            }
+        }    
+
+
+
+
+
         function word_score(value){
             count = 0
             let decrease = true
@@ -223,6 +233,7 @@
                 console.log("Button " + " " + btn.value + " " + " was clicked!" );
                 dashes(btn.value);
                 live_score(btn.value);
+                user_input(btn.value);
                 document.getElementById('score').innerHTML= "Your Score is" + " " + score;
                 document.getElementById('lives').innerHTML = "Remaining Lives:" + " " + lives;
                 lives_image()

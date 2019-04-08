@@ -63,7 +63,7 @@
 
         // displays and modifies the lines as play goes on 
         let num_lines = []
-        let remainingLetters = word.length;
+        
 
         function initiate_dashes(){
             for (i = 0; i < word.length; i++){
@@ -78,22 +78,9 @@
             for (i = 0; i < word.length; i++){
                 if (value == word[i]){
                     num_lines[i] = word[i];
-                    remainingLetters --;
                 }
-                }
-            if (remainingLetters == 0){
-                let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
-                let name = prompt("Enter your name: ");
-                if (winner == true){
-                    location.reload()
-                }
-                else{
-                    location.reload()
-                }
-            } 
-                console.log(name);
-                console.log(score);
-        
+            }
+    
             let lineWrite = num_lines.join(" ");
             console.log(lineWrite);
             document.getElementById("lines").innerHTML = (lineWrite);
@@ -101,6 +88,27 @@
         }
         initiate_dashes();
 
+        let remainingLetters = word.length;
+        function user_input(value){
+            for (i=0;i<word.length;i++){
+                if (value == word[i]){
+                    remainingLetters --;
+                }
+                if (remainingLetters == 0){
+                    let name = prompt("Enter your name: ");
+                    console.log(name);
+                    let winner = confirm("Congratulations! The word is " + word + ". " + "Your score is" + " " + score + ".");
+                    if (winner == true){
+                        location.reload();
+                    }
+                    else{
+                        location.reload()
+                    }
+                }
+            }
+        }    
+           
+    
 
         function word_score(value){
             count = 0
@@ -195,6 +203,7 @@
                 console.log("Button " + " " + btn.value + " " + " was clicked!" );
                 dashes(btn.value);
                 live_score(btn.value);
+                user_input(btn.value);
                 document.getElementById('score').innerHTML= "Your Score is" + " " + score;
                 document.getElementById('lives').innerHTML = lives;
                 lives_image()
