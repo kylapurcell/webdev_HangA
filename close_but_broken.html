@@ -13,6 +13,7 @@
         <p id ="definition"></p>
         <input type="button" value="End Game" id="endgame">
         <p id = "buttons_here"></p>
+        <img src = "Images/image1.gif" id = 'hangimage'>
 </body>
 
 
@@ -130,6 +131,31 @@
             return lives;
         }
 
+        function lives_image(){
+            if (lives == 6) {
+                document.getElementById('hangimage').src='images/image2.gif'
+            }
+            if (lives == 5) {
+                document.getElementById('hangimage').src='images/image3.gif'
+            }
+            if (lives == 4){
+                document.getElementById('hangimage').src='images/image4.gif'
+            }
+            if (lives == 3){
+                document.getElementById('hangimage').src='images/image5.gif'
+            }
+            if (lives == 2) {
+                document.getElementById('hangimage').src='images/image6.gif'
+            }
+            if (lives == 1) {
+                document.getElementById('hangimage').src='images/image7.gif'
+            }
+            if (lives == 0){
+                document.getElementById('hangimage').src='images/image8.gif'
+            }
+        }
+       
+
          // creates the buttons and performs game mechanics per button click
         function Create_Buttons (x) {
             for (i = 0; i < x; i++){
@@ -148,6 +174,7 @@
                 live_score(btn.value);
                 document.getElementById('score').innerHTML= "Your Score is" + " " + score;
                 document.getElementById('lives').innerHTML = lives;
+                lives_image()
             } }
         }
         // creates the letters in the order i
@@ -168,6 +195,7 @@
             initiate_dashes();
             document.getElementById("buttons_here").innerHTML=" ";
             Create_Buttons(26);
+            document.getElementById('hangimage').src='images/image1.gif'
         }
         
        
