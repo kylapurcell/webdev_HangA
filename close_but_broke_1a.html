@@ -96,6 +96,7 @@
                     document.getElementById("lines").innerHTML = (lineWrite);
                     return num_lines;
                 }
+                // Display line dashes for each randomly selected word
                 function dashes(value){
                     for (i = 0; i < word.length; i++){
                         if (value == word[i]){
@@ -109,6 +110,8 @@
                 }
                 initiate_dashes();
                 let remainingLetters = word.length;
+
+                // Get user input when they win game and display message else display losing message
                 function user_input(value){
                     for (i=0;i<word.length;i++){
                         if (value == word[i]){
@@ -126,7 +129,9 @@
                             }
                         }
                     }
-                }    
+                } 
+
+                // Calculate score for selected buttons   
                 function word_score(value){
                     count = 0
                     let decrease = true
@@ -143,32 +148,17 @@
                     }
                     return decrease
                 }
+
+                // calculates remaining lives for incorrect guesses
                 function live_score(value){
                     if (word_score(value)) {
                         lives = lives - 1;
                         console.log(lives);
                     }
                 }
-            
-                function right_letters(value, word){
-                    count = 0;
-                    for (i = 0; i < word.length; i++){
-                        if (value == word[i]){
-                            count += 1;
-                        } 
-                    } 
-                    return count;
-                }
-                function count_score(score, right_letters){
-                    score += right_letters;
-                    return score;
-                }
-                function count_lives(lives, right_letters){
-                    if (right_letters < 1){
-                        lives -= 1;
-                    }
-                    return lives;
-                }
+
+
+                // Generates images that correspond to lives lost 
                 function lives_image(){
                     if (lives == 6) {
                         document.getElementById('hangimage').src='images/image2.gif'
@@ -233,6 +223,8 @@
                     return String.fromCharCode(n+65)
                 }
                 Create_Buttons(26);
+
+                // Restarts the game when end game button is clicked
                 function start_game(){
                     word = split_word();
                     lives = 7;
