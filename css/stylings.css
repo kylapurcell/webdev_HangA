@@ -356,3 +356,49 @@
         box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
         transition: all 0.4s ease 0s;
 }
+
+/* Styling for the highscores window */
+
+#after_game{
+  position: aboslute;
+  right: 50%;
+  top: 10%;
+
+  align-items: center;
+  display: flex;
+
+}
+
+#after_game{
+  align-items: center;
+  display: flex;
+
+  border-radius: 4px;
+  z-index: +1;
+
+}
+
+#data_display_name{
+  width: 100px;
+}
+
+#data_display_score{
+  width:100px;
+}
+
+
+#highscores{
+  position: fixed;
+  left: 40%;
+  top: 50%;
+
+  border-radius: 4px;
+  z-index: +1;
+  visibility: hidden;
+
+  background-color: tan;
+  font-weight: 20;
+
+  text-align: center;
+  
+}

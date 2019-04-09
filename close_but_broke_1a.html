@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hang-Man</title>
     <link rel="stylesheet" href="css/stylings.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAFtsfe3lwjHyQb01xlJkaR7pOYmBTChBU",
+        authDomain: "hang-man-scores.firebaseapp.com",
+        databaseURL: "https://hang-man-scores.firebaseio.com",
+        projectId: "hang-man-scores",
+        storageBucket: "hang-man-scores.appspot.com",
+        messagingSenderId: "773707829287"
+    };
+    firebase.initializeApp(config);
+    </script>
 </head>
 
 <body>
@@ -16,33 +30,28 @@
             <p>Hangman</p>
         </header>
                 
-        <main>
-            <!--Starting score-->
+        <main id="main">
+            
             <div class="score">
             <p id = 'score'>Your Score is 0 </p>
             </div>
-            
-            <!--Starting number of lives-->
+
             <div class="lives">
             <p id = 'lives'>Remaining lives 7 </p>
             </div>
 
-            <!--Represents dashes for missing letters in word-->
             <div class="lines">
             <p id = "lines">-</p>
             </div>
 
-            <!--Creates definition-->
             <div class="definiton">
             <p id ="definition"></p>
             </div>
             
-            <!--Creates the button to restart the game by resetting the score, lives, and missing word-->
             <div class="end_game">
             <input type="button" value="End Game" id="endgame">
             </div>
 
-            <!--Creates the structure for the rows of letter buttons-->
             <div class="table">
                 <ul id="keyboard" type="none">
 
@@ -53,11 +62,24 @@
                     <li id="row_three"></li>
 
                 </ul>
-             </div>
+            </div>
+
+
+                </div>
+            </div>
         </main>
 
     </div>
-    <script type='text/javascript' src='javascript/java.js'></script>
+
+    <div id="highscores"> Highscores
+        <div id="after_game">
+            <div id="data_display_name"></div>
+            <div id="data_display_score"></div>
+        </div>
+        <input type="button" value="Restart Game" id="game">
+    </div>
+
     
 </body>
+    <script type='text/javascript' src='javascript/java.js'></script>
 </html>
