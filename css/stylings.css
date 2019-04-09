@@ -1,0 +1,360 @@
+/**
+  Filename: stylings.css
+  Author: Wade Schmidt
+  Date: Apr.8,2018.
+  Notes: Stylesheet for Web Dev group project.
+*/
+/** Stylings for mobile.*/
+@media only screen and (max-width: 600px)
+{
+  #wrapper
+      {
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: auto;
+        margin-top: 5px;
+        text-align:center;
+        position:relative;
+      } 
+      header
+      { 
+          color:red;
+          text-align: center;
+          text-transform: Uppercase;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+          font-size:3.50em;
+          background-color: grey;
+          background-image: url("../Images/Danger_2.png");
+          background-size: 115px;
+          height:115px;
+          border-style: groove;
+          border-color: grey;
+          border-radius: 5px;
+          box-shadow: 5px, 5px, 5px, black;
+      }
+
+      button
+      {
+        font-style:Type_Keys;
+        color: #fff !important;
+        text-align: center;
+        text-transform: uppercase;
+        background:black;
+        background-image: linear-gradient(to bottom, grey, black);
+        padding: 5px;
+        border:none;
+        margin-right:5px;
+        margin-top:5px;
+        margin-bottom:5px;
+        width: 25px;
+        font-size:1.25em;
+        border-radius: 5px;
+      }
+
+      #endgame
+      {
+        font-style:Type_Keys;
+        color: #fff !important;
+        text-transform: uppercase;
+        background:black;
+        text-align: center;
+        background-image: linear-gradient(to bottom, grey, black);
+        display: inline-block;
+        border:none;
+        width: 125px;
+        font-size:1.25em;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      #lives
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background: linear-gradient(to bottom, lightgrey,seashell);
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+
+      #definition
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background: linear-gradient(to bottom, lightgray, seashell);
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      #score
+      {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+          font-style:Type_Keys;
+          font-size: 2.50em;
+          color: red;
+          border-style:groove;
+          border-color:black;
+          background-color:lightgrey;
+          border-radius: 5px;
+          padding: 4px;
+          margin-bottom:5px;
+          margin-top:5px;
+      }
+
+      .score
+      {
+          display:inline-block;
+      }
+
+      .end_game
+      {
+        display:inline-block;
+      }
+
+      #lines
+      {
+          font-style:Type_Keys;
+          font-size: 2.00em;
+          color: red;
+          background: linear-gradient(to bottom, lightgray, seashell);
+          border-style: groove;
+          border-color:black;
+          border-radius:5px;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-top: 5px;
+          margin-bottom:5px;
+      }
+
+      .lines
+      {
+          display: inline-block;
+      }
+      
+      #wrapper
+      {
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: auto;
+        margin-top: 5px;
+        text-align:center;
+        position:relative;
+        
+      }
+      
+      body
+      {
+          background-image: url("../Images/Word Art 1.png");
+          background-position: center;
+          background-position: relative;
+          background-repeat: no-repeat;
+      }
+      
+      ul
+      {
+        margin-left:auto;
+        margin-right:auto;
+        min-width: 40px;
+        min-height: 80px;
+        position: center;
+        position: relative;
+        display: block;
+        text-align: center;
+      }
+
+      button:hover 
+      {
+        background: #434343;
+        letter-spacing: 1px;
+        -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+        transition: all 0.4s ease 0s;
+      }
+}
+
+/** Styling for desktop */
+@font-face
+      {
+          font-family: Type_Keys;
+          src: local("Type Keys.ttf");
+          src: local("Type Keys Filled.ttf");
+      }
+
+      header
+      { 
+          color:red;
+          text-align: center;
+          text-transform: Uppercase;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+          font-size:3.50em;
+          background-color: grey;
+          background-image: url("../Images/Danger_2.png");
+          background-size: 115px;
+          height:115px;
+          border-style: groove;
+          border-color: grey;
+          border-radius: 5px;
+          box-shadow: 5px, 5px, 5px, black;
+      }
+
+      button
+      {
+        font-style:Type_Keys;
+        color: #fff !important;
+        text-align: center;
+        text-transform: uppercase;
+        background:black;
+        background-image: linear-gradient(to bottom, grey, black);
+        padding: 5px;
+        border:none;
+        margin-right:5px;
+        margin-top:5px;
+        margin-bottom:5px;
+        width: 25px;
+        font-size:1.25em;
+        border-radius: 5px;
+      }
+
+      #endgame
+      {
+        font-style:Type_Keys;
+        color: #fff !important;
+        text-transform: uppercase;
+        background:black;
+        text-align: center;
+        background-image: linear-gradient(to bottom, grey, black);
+        display: inline-block;
+        border:none;
+        width: 125px;
+        font-size:1.25em;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      #lives
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background: linear-gradient(to bottom, lightgrey,seashell);
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+      
+      #definition
+      {
+        font-style:Type_Keys;
+        font-size: 1.00em;
+        color: red;
+        background: linear-gradient(to bottom, lightgray, seashell);
+        border-style: groove;
+        border-color:black;
+        border-radius:5px;
+        display: inline-block;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      #score
+      {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+          font-style:Type_Keys;
+          font-size: 2.50em;
+          color: red;
+          border-style:groove;
+          border-color:black;
+          background-color:lightgrey;
+          border-radius: 5px;
+          padding: 4px;
+          margin-bottom:5px;
+          margin-top:5px;
+      }
+
+      .score
+      {
+          display:inline-block;
+      }
+
+      .end_game
+      {
+        display:inline-block;
+      }
+
+      #lines
+      {
+          font-style:Type_Keys;
+          font-size: 2.00em;
+          color: red;
+          background: linear-gradient(to bottom, lightgray, seashell);
+          border-style: groove;
+          border-color:black;
+          border-radius:5px;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-top: 5px;
+          margin-bottom:5px;
+      }
+
+      .lines
+      {
+          display: inline-block;
+      }
+      
+      #wrapper
+      {
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: auto;
+        margin-top: 5px;
+        text-align:center;
+        position:relative;
+        
+      }
+      
+      body
+      {
+          background-image: url("../Images/Word Art 1.png");
+          background-position: center;
+          background-position: relative;
+          background-repeat: no-repeat;
+      }
+      
+      ul
+      {
+        margin-left:auto;
+        margin-right:auto;
+        min-width: 40px;
+        min-height: 80px;
+        position: center;
+        position: relative;
+        display: block;
+        text-align: center;
+      }
+
+      button:hover 
+      {
+        background: #434343;
+        letter-spacing: 1px;
+        -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+        transition: all 0.4s ease 0s;
+      }
