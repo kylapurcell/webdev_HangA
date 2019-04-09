@@ -4,6 +4,7 @@
   Date: Apr.8,2018.
   Notes: Stylesheet for Web Dev group project.
 */
+/** Stylings for mobile.*/
 @media only screen and (max-width: 600px)
 {
   #wrapper
@@ -182,6 +183,8 @@
         transition: all 0.4s ease 0s;
       }
 }
+
+/** Styling for desktop */
 @font-face
       {
           font-family: Type_Keys;
