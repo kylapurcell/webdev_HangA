@@ -7,6 +7,7 @@
 /** Stylings for mobile.*/
 @media only screen and (max-width: 600px)
 {
+/** style for viewport */
   #wrapper
       {
         margin-left: 5px;
@@ -16,6 +17,7 @@
         text-align:center;
         position:relative;
       } 
+      /** style for header */
       header
       { 
           color:red;
@@ -33,7 +35,7 @@
           border-radius: 5px;
           box-shadow: 5px, 5px, 5px, black;
       }
-
+      /** style for button */
       button
       {
         font-style:Type_Keys;
@@ -51,7 +53,7 @@
         font-size:1.25em;
         border-radius: 5px;
       }
-
+      /** style for end game button */
       #endgame
       {
         font-style:Type_Keys;
@@ -68,6 +70,7 @@
         padding: 5px;
       }
 
+      /** style for lines text box */
       #lives
       {
         font-style:Type_Keys;
@@ -82,6 +85,7 @@
         margin-bottom: 5px;
       }
 
+      /** style for definition text box */
       #definition
       {
         font-style:Type_Keys;
@@ -96,6 +100,8 @@
         margin-top: 5px;
         margin-bottom: 5px;
       }
+
+      /** style for score text box */
       #score
       {
         -webkit-text-stroke-width: 1px;
@@ -122,6 +128,7 @@
         display:inline-block;
       }
 
+      /** style for lines text box */
       #lines
       {
           font-style:Type_Keys;
@@ -141,18 +148,8 @@
       {
           display: inline-block;
       }
-      
-      #wrapper
-      {
-        margin-left: 5px;
-        margin-top: 5px;
-        margin-bottom: auto;
-        margin-top: 5px;
-        text-align:center;
-        position:relative;
-        
-      }
-      
+
+      /** style for body */
       body
       {
           background-image: url("../Images/Word Art 1.png");
@@ -161,6 +158,7 @@
           background-repeat: no-repeat;
       }
       
+      /** style for ul */
       ul
       {
         margin-left:auto;
@@ -357,4 +355,4 @@
         -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
         box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
         transition: all 0.4s ease 0s;
-      }
+}
