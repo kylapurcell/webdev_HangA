@@ -31,27 +31,32 @@
         </header>
                 
         <main id="main">
-            
+            <!--Places Starting score-->
             <div class="score">
             <p id = 'score'>Your Score is 0 </p>
             </div>
 
+            <!--Places Starting number of lives-->
             <div class="lives">
             <p id = 'lives'>Remaining lives 7 </p>
             </div>
 
+            <!--Represents dashes for missing letters in word-->
             <div class="lines">
             <p id = "lines">-</p>
             </div>
 
+            <!--Creates place for definition-->
             <div class="definiton">
             <p id ="definition"></p>
             </div>
             
+            <!--Creates spaces for the button to restart the game by resetting the score, lives, and missing word-->
             <div class="end_game">
             <input type="button" value="End Game" id="endgame">
             </div>
 
+             <!--Creates the structure for the rows of letter buttons-->
             <div class="table">
                 <ul id="keyboard" type="none">
 
@@ -71,6 +76,7 @@
 
     </div>
 
+    <!-- Generates the z-index that will create highscores-->
     <div id="highscores"> Highscores
         <div id="after_game">
             <div id="data_display_name"></div>
